@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import { createMaterialTopTabNavigator } from 'react-navigation';
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/Feather';
 
 import userInfo from './userInfo';
 import Messages from './Messages';
@@ -42,8 +42,8 @@ export default createMaterialTopTabNavigator({
     Home: {
         screen: HomePage,
         navigationOptions: {
-            tabBarIcon: () => (
-                <Image source={require('../img/home.png')} />
+            tabBarIcon: ({tintColor}) => (
+		<Icon name='home' color={tintColor} size={30} />
             )
         }
     },
@@ -51,7 +51,7 @@ export default createMaterialTopTabNavigator({
         screen: Messages,
         navigationOptions: {
             tabBarIcon: ({tintColor}) => (
-		<Icon name="ios-home" color={tintColor} size={24} />
+                <Icon name='inbox' color={tintColor} size={30} />
             )
         }
     }
