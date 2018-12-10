@@ -1,0 +1,3 @@
+rootProject.name = 'rawr'
+
+include ':app'
