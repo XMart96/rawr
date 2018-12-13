@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/Feather';
 
 export default class SignIn extends Component {
     static navigationOptions = {
@@ -9,7 +10,7 @@ export default class SignIn extends Component {
         return (
             <View style={styles.main}>
                 <View>
-                    <Image source={require('../img/logo.png')}/>
+                    <Icon name='aperture' size={120} />
                 </View>
                 <View style={styles.inputBox}>
                     <View style={styles.chooseBox}>

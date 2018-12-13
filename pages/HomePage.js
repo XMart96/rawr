@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
-import { createMaterialTopTabNavigator } from 'react-navigation';
+import { View, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 import userInfo from './userInfo';
-import Messages from './Messages';
 
-class HomePage extends Component {
+export default class HomePage extends Component {
     render() {
         return(
             <View style={styles.main}>
                 <View>
                     <View style={styles.profileBox}>
                         <View style={{flex: 1}}>
-                            <Image source={require('../img/user.png')} />
+                            <Icon name='user' size={100} />
                         </View>
                         <View style={{flex: 1}}>
                             <Text style={styles.data}>{userInfo.name}</Text>
@@ -25,10 +23,14 @@ class HomePage extends Component {
                         <Text style={styles.statText}>
                             stories: {userInfo.stories}
                         </Text>
-                        <Text style={styles.statText} onPress={() => this.props.navigation.navigate('Folowing')}>
+                        <Text 
+                            style={styles.statText} 
+                            onPress={() => this.props.navigation.navigate('Folowing')}>
                             folowing: {userInfo.folowingQuantity}
                         </Text>
-                        <Text style={styles.statText} onPress={() => this.props.navigation.navigate('Folowers')}>
+                        <Text 
+                            style={styles.statText} 
+                            onPress={() => this.props.navigation.navigate('Folowers')}>
                             folowers: {userInfo.folowersQuantity}
                         </Text>
                     </View>
@@ -37,39 +39,6 @@ class HomePage extends Component {
         );
     }
 }
-
-export default createMaterialTopTabNavigator({
-    Home: {
-        screen: HomePage,
-        navigationOptions: {
-            tabBarIcon: ({tintColor}) => (
-		<Icon name='home' color={tintColor} size={30} />
-            )
-        }
-    },
-    Messages: {
-        screen: Messages,
-        navigationOptions: {
-            tabBarIcon: ({tintColor}) => (
-                <Icon name='inbox' color={tintColor} size={30} />
-            )
-        }
-    }
-}, {
-    tabBarPosition: 'bottom',
-    tabBarOptions: {
-        activeTintColor: 'rgb(0, 206, 209)',
-        inactiveTintColor: 'rgb(128, 128, 128)',
-        showIcon: true,
-        showLabel: false,
-        style: {
-            backgroundColor: 'rgb(255, 255, 255)'
-        },
-        indicatorStyle: {
-            height: 0
-        }
-    }
-});
 
 const styles = StyleSheet.create({
     main: {
