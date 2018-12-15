@@ -13,12 +13,10 @@ export default class SignIn extends Component {
                     <MainLogo />
                 </View>
                 <View style={styles.inputBox}>
-                    <RegistrationInput placeholder='Login'/>
-                    <RegistrationInput placeholder='Password'/>
-                    <RegistrationButton 
-                        text='Sign In' 
-                        onPress={() => this.props.navigation.navigate('Home')} 
-                    />
+                    <RegistrationInput placeholder='Name' />
+                    <RegistrationInput placeholder='Email' />
+                    <RegistrationInput placeholder='Password' />
+                    <RegistrationButton text='Registration' onPress={() => this.props.navigation.navigate('Home')} />
                 </View>
             </View>
         );

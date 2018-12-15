@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
-import { createStackNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Feather';
 
 export default class FriendListItem extends Component {

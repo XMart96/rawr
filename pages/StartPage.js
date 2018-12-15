@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 
 import MainLogo from '../components/MainLogo';
-import RegistrationInput from '../components/RegistrationInput';
 import RegistrationButton from '../components/RegistrationButton';
 
 export default class SignIn extends Component {
@@ -13,12 +12,8 @@ export default class SignIn extends Component {
                     <MainLogo />
                 </View>
                 <View style={styles.inputBox}>
-                    <RegistrationInput placeholder='Login'/>
-                    <RegistrationInput placeholder='Password'/>
-                    <RegistrationButton 
-                        text='Sign In' 
-                        onPress={() => this.props.navigation.navigate('Home')} 
-                    />
+                    <RegistrationButton text='Sign In' onPress={() => this.props.navigation.navigate('SignIn')} />
+                    <RegistrationButton text='Registration' onPress={() => this.props.navigation.navigate('Registration')} />
                 </View>
             </View>
         );

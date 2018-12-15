@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { View, Text, StyleSheet, SectionList } from 'react-native';
 
-import FriendListItem from './FriendListItem';
+import FriendListItem from '../components/FriendListItem';
 
 export default class FriendList extends Component {
     render() {
@@ -15,12 +15,14 @@ export default class FriendList extends Component {
                         {title: 'S', data: ['Sanya']}
                     ]}
                     renderItem={({item}) => 
-			<FriendListItem 
-			    name={item} 
-			    onPress={() => this.props.navigation.navigate('Chat')} 
-			/>
-		    }
-                    renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.title}</Text>}
+                        <FriendListItem 
+                            name={item} 
+                            onPress={() => this.props.navigation.navigate('Chat')} 
+                        />
+		            }
+                    renderSectionHeader={({section}) => 
+                        <Text style={styles.sectionHeader}>{section.title}</Text>
+                    }
                     keyExtractor={(item, index) => index}
                 />
             </View>

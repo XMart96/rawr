@@ -2,6 +2,8 @@ import React from 'react';
 import { createStackNavigator, createMaterialTopTabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Feather';
 
+import StartPage from './StartPage';
+import Registration from './Registration';
 import SignIn from './SignIn';
 import HomePage from './HomePage';
 import Folowing from './Folowing';
@@ -21,12 +23,15 @@ const FriendListStackNav = createStackNavigator({
 
 FriendListStackNav.navigationOptions = ({navigation}) => {
     let tabBarVisible = true;
+    let swipeEnabled = true;
     if (navigation.state.index > 0) {
         tabBarVisible = false;
+        swipeEnabled = false
     }
     return {
         tabBarVisible,
-    };
+        swipeEnabled
+    }
 }
 
 const TabNav = createMaterialTopTabNavigator({
@@ -63,13 +68,40 @@ const TabNav = createMaterialTopTabNavigator({
 });
 
 export default createStackNavigator({
-    SignIn: SignIn,
+    StartPage: {
+        screen: StartPage,
+        navigationOptions: {
+            header: null
+        }
+    },
+    SignIn: {
+        screen: SignIn,
+        navigationOptions: {
+            header: null
+        }
+    },
+    Registration: {
+        screen: Registration,
+        navigationOptions: {
+            header: null
+        }
+    },
     Home: {
         screen: TabNav,
         navigationOptions: {
             header: null
         }
     },
-    Folowing: Folowing,
-    Folowers: Folowers
+    Folowing: {
+        screen: Folowing,
+        navigationOptions: {
+            title: 'Folowing'
+        }
+    },
+    Folowers: {
+        screen: Folowers,
+        navigationOptions: {
+            title: 'Folowers'
+        }
+    }
 });
