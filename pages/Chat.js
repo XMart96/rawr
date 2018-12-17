@@ -14,16 +14,6 @@ export default class Chat extends Component {
 			items: [
 				{key: 'arajin'},
 				{key: 'ddd'},
-				{key: 'ddrd'},
-				{key: 'dxdd'},
-				{key: 'ddd'},
-				{key: 'ddfd'},
-				{key: 'dddd'},
-				{key: 'dfdd'},
-				{key: 'ddd'},
-				{key: 'ddd'},
-				{key: 'dfdd'},
-				{key: 'ddd'},
 				{key: 'verjin'},
 			],
 			text: ''

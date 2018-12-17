@@ -3,9 +3,6 @@ import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 export default class FriendListItem extends Component {
-    constructor(props) {
-    	super(props);
-    }
     render() {
         return(
             <TouchableOpacity onPress={this.props.onPress} style={styles.main}>

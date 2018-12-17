@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { TextInput, StyleSheet } from 'react-native';
 
 export default class RegistrationInput extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return(
             <TextInput
