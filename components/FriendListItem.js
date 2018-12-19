@@ -25,6 +25,6 @@ const styles = StyleSheet.create({
         padding: 5
     },
     friendName: {
-        fontSize: 20
+        fontSize: 18
     }
 });

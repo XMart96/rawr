@@ -33,6 +33,6 @@ const styles = StyleSheet.create({
     },
     statText: {
         margin: 5,
-        fontSize: 20
+        fontSize: 16
     }
 });
