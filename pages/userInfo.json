@@ -1,11 +1,37 @@
 {
-	"login": "",
-	"password": "",
-	"id": 1234,
-	"image": "../img/user.png",
-	"name": "Xacho",
-	"country": "Armenia",
-	"stories": 4,
-	"folowingQuantity": 3,
-	"folowersQuantity": 7
+	"userLogin": "",
+	"userPassword": "",
+	"userID": 1234,
+	"userImage": "../img/user.png",
+	"userName": "Xacho",
+	"userCountry": "Armenia",
+	"userStories": [
+		{}
+	],
+	"userFolowing": [
+		{},
+		{}
+	],
+	"userFolowers": [
+		{},
+		{}
+	],
+	"userFriendChatList": [
+		{
+			"userID": 2542,
+			"userName": "Bogdan"
+		},
+		{
+			"userID": 8956,
+			"userName": "Edo"
+		},
+		{
+			"userID": 8541,
+			"userName": "Nikita"
+		},
+		{
+			"userID": 1489,
+			"userName": "Sash"
+		}
+	]
 }

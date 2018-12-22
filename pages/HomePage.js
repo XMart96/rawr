@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View, StyleSheet } from 'react-native';
 
 import userInfo from './userInfo';
@@ -6,25 +6,23 @@ import ProfileHeader from '../components/ProfileHeader';
 import ProfileHeaderStats from '../components/ProfileHeaderStats';
 import ProfileBody from '../components/ProfileBody';
 
-export default class HomePage extends Component {
-    render() {
+export default function HomePage(props) {
         return(
             <View style={styles.main}>
                 <ProfileHeader
-                    name={userInfo.name}
-                    country={userInfo.country} 
+                    name={userInfo.userName}
+                    country={userInfo.userCountry} 
                 />
                 <ProfileHeaderStats 
-                    stories={userInfo.stories}
-                    folowingQuantity={userInfo.folowingQuantity}
-                    folowersQuantity={userInfo.folowersQuantity}
-                    folowingPage={() => this.props.navigation.navigate('Folowing')}
-                    folowersPage={() => this.props.navigation.navigate('Folowers')}
+                    stories={userInfo.userStories.length}
+                    folowingQuantity={userInfo.userFolowing.length}
+                    folowersQuantity={userInfo.userFolowers.length}
+                    folowingPage={() => props.navigation.navigate('Folowing', {userName: userInfo.userName})}
+                    folowersPage={() => props.navigation.navigate('Folowers', {userName: userInfo.userName})}
                 />
                 <ProfileBody />
             </View>
         );
-    }
 }
 
 const styles = StyleSheet.create({

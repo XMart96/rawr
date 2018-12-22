@@ -1,20 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
-export default class FriendListItem extends Component {
-    render() {
-        return(
-            <TouchableOpacity onPress={this.props.onPress} style={styles.main}>
-                <Icon style={styles.friendImage} name='user' size={45} />
-                <Text style={styles.friendName}>{this.props.name}</Text>
-            </TouchableOpacity>
-        );
-    }
+export default function FriendListItem(props) {
+    return(
+        <TouchableOpacity onPress={props.onPress} style={styles.main}>
+            <Icon style={styles.friendImage} name='user' size={50} />
+            <Text style={styles.friendName}>{props.name}</Text>
+        </TouchableOpacity>
+    );
 }
 
 const styles = StyleSheet.create({
     main: {
+        flex: 1,
         flexDirection: 'row',
         padding: 10
     },  
@@ -25,6 +24,9 @@ const styles = StyleSheet.create({
         padding: 5
     },
     friendName: {
-        fontSize: 18
+        flex: 1,
+        fontSize: 18,
+        borderBottomWidth: 1,
+        borderBottomColor: 'rgb(128, 128, 128)'
     }
 });

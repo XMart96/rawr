@@ -1,29 +1,31 @@
 import React, {Component} from 'react';
-import { View, Text, StyleSheet, SectionList } from 'react-native';
+import { View, StyleSheet, FlatList } from 'react-native';
 
 import FriendListItem from '../components/FriendListItem';
 
 export default class FriendList extends Component {
+    constructor() {
+        super();
+        this.state = {
+            items: [
+                {key: 'Bogdan'},
+                {key: 'Edo'},
+                {key: 'Nikita'},
+                {key: 'Sanya'}
+            ]
+        };
+    }
     render() {
         return(
             <View style={styles.main}>
-                <SectionList
-                    sections={[
-                        {title: 'B', data: ['Bogdan']},
-                        {title: 'E', data: ['Edo']},
-                        {title: 'N', data: ['Nikita']},
-                        {title: 'S', data: ['Sanya']}
-                    ]}
+                <FlatList
+                    data={this.state.items}
                     renderItem={({item}) => 
                         <FriendListItem 
-                            name={item} 
+                            name={item.key}
                             onPress={() => this.props.navigation.navigate('Chat')} 
                         />
 		            }
-                    renderSectionHeader={({section}) => 
-                        <Text style={styles.sectionHeader}>{section.title}</Text>
-                    }
-                    keyExtractor={(item, index) => index}
                 />
             </View>
         );

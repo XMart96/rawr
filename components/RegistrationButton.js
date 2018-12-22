@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native'
 
-export default class RegistrationButton extends Component {
-    render() {
-        return( 
-            <TouchableOpacity style={styles.button} onPress={this.props.onPress}>
-                <Text style={styles.text}>{this.props.text}</Text>
-            </TouchableOpacity>
-        );
-    }
+export default function RegistrationButton(props) {
+    return( 
+        <TouchableOpacity style={styles.button} onPress={props.onPress}>
+            <Text style={styles.text}>{props.text}</Text>
+        </TouchableOpacity>
+    );
 }
 
 const styles = StyleSheet.create({

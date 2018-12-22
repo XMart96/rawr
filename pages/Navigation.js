@@ -92,16 +92,6 @@ export default createStackNavigator({
             header: null
         }
     },
-    Folowing: {
-        screen: Folowing,
-        navigationOptions: {
-            title: 'Folowing'
-        }
-    },
-    Folowers: {
-        screen: Folowers,
-        navigationOptions: {
-            title: 'Folowers'
-        }
-    }
+    Folowing: Folowing,
+    Folowers: Folowers
 });

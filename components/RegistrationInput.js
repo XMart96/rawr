@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { TextInput, StyleSheet } from 'react-native';
 
-export default class RegistrationInput extends Component {
-    render() {
-        return(
-            <TextInput
-                style = {styles.input}
-                placeholder = {this.props.placeholder}
-                placeholderTextColor = 'rgb(128, 128, 128)'
-            />
-        );
-    }
+export default function RegistrationInput(props) {
+    return(
+        <TextInput
+            style = {styles.input}
+            placeholder = {props.placeholder}
+            placeholderTextColor = 'rgb(128, 128, 128)'
+        />
+    );
 }
 
 const styles = StyleSheet.create({

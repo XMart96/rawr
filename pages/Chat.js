@@ -31,7 +31,13 @@ export default class Chat extends Component {
 	}
 	dateTime = () => {
 		let date = new Date();
-		let dateTime = `${date.getHours()}:${date.getMinutes()}`;
+		addZero = (num) => {
+			if(num >= 0 && num < 10) {
+				return `0${num}`;
+			}
+			return num;
+		}
+		let dateTime = `${addZero(date.getHours())}:${addZero(date.getMinutes())}`;
 		return(dateTime);
 	}
 	render() {

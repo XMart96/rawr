@@ -1,26 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-export default class ProfileHeaderStats extends Component {
-    render() {
-        return(
-            <View style={styles.statsBox}>
-                <Text style={styles.statText}>
-                    stories: {this.props.stories}
-                </Text>
-                <Text 
-                    style={styles.statText} 
-                    onPress={this.props.folowingPage}>
-                    folowing: {this.props.folowingQuantity}
-                </Text>
-                <Text 
-                    style={styles.statText} 
-                    onPress={this.props.folowersPage}>
-                    folowers: {this.props.folowersQuantity}
-                </Text>
-            </View>
-        );
-    }
+export default function ProfileHeaderStats(props) {
+    return(
+        <View style={styles.statsBox}>
+            <Text style={styles.statText}>
+                stories: {props.stories}
+            </Text>
+            <Text 
+                style={styles.statText} 
+                onPress={props.folowingPage}>
+                folowing: {props.folowingQuantity}
+            </Text>
+            <Text 
+                style={styles.statText} 
+                onPress={props.folowersPage}>
+                folowers: {props.folowersQuantity}
+            </Text>
+        </View>
+    );
 }
 
 const styles = StyleSheet.create({
@@ -29,7 +27,9 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         marginTop: 20,
         borderTopWidth: 1,
-        borderTopColor: 'rgb(128, 128, 128)'
+	    borderBottomWidth: 1,
+        borderTopColor: 'rgb(128, 128, 128)',
+        borderBottomColor: 'rgb(128, 128, 128)'
     },
     statText: {
         margin: 5,
