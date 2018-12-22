@@ -1,22 +1,19 @@
 import React, { Component } from 'react';
-import { TextInput,
-	View,
-	StyleSheet,
-	FlatList,
-	Text,
-	TouchableOpacity
-} from 'react-native';
+import { TextInput, View, StyleSheet, FlatList,	TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
+
+import Message from '../components/Message';
 
 export default class Chat extends Component {
 	constructor() {
 		super();
 		this.state = {
 			items: [],
-			text: ''
+			text: '',
+			sendButtonVisible: false
 		};
 	}
-  	press = () => {
+  	sendMessage = () => {
 		let message = this.state.text;
 		if (message != '') {	
 			this.state.items.push({
@@ -40,6 +37,15 @@ export default class Chat extends Component {
 		let dateTime = `${addZero(date.getHours())}:${addZero(date.getMinutes())}`;
 		return(dateTime);
 	}
+	sendButtonVisible = () => {
+		if (this.state.sendButtonVisible) {
+			return(
+				<TouchableOpacity style={styles.sendButton} onPress={this.sendMessage}>
+					<Icon name='send' color='rgb(255, 255, 255)' size={25} />
+				</TouchableOpacity>
+			);
+		}
+	}
 	render() {
 		return (
 			<View style={styles.container}>
@@ -47,25 +53,20 @@ export default class Chat extends Component {
 					<FlatList
 						data={this.state.items}
 						renderItem={({item}) => 
-							<View style={styles.messageBlock}>
-								<Text style={styles.message}>
-									{item.key}
-									<Text style={{fontSize: 10}}>{item.dateTime}</Text>
-								</Text>
-							</View>						
+							<Message message={item.key} time={item.dateTime} />				
 						}
 					/>
 				</View>
 				<View style={styles.inputBox}>
 					<TextInput
-						style={styles.input}
+						style={[styles.input, this.state.sendButtonVisible && styles.inputActive]}
 						value={this.state.text}
-						onChangeText={text => this.setState({text})}
+						onChangeText={(text) => this.setState({text})}
+						onFocus={() => this.setState({sendButtonVisible: true})}
+						onBlur={() => this.setState({sendButtonVisible: false})}
 						placeholder='Write a message'
 					/>
-					<TouchableOpacity style={styles.sendButton} onPress={this.press}>
-						<Icon name='send' color='rgb(255, 255, 255)' size={25} />
-					</TouchableOpacity>
+					{this.sendButtonVisible()}
 				</View>
 			</View>
 		);
@@ -88,10 +89,13 @@ const styles = StyleSheet.create({
 		borderColor: 'rgb(227, 227, 227)',
 		backgroundColor: 'rgb(227, 227, 227)',
 		borderWidth: 1,
-		borderTopLeftRadius: 10,
-		borderBottomLeftRadius: 10,
+		borderRadius: 10,
 		fontSize: 16,
 		paddingLeft: 15
+	},
+	inputActive: {
+		borderTopRightRadius: 0,
+		borderBottomRightRadius: 0
 	},
 	sendButton: {
 		flex: 1,
@@ -105,19 +109,5 @@ const styles = StyleSheet.create({
 		flex: 1,
 		alignItems: 'flex-end',
 		margin: 10
-	},
-	messageBlock: {
-		flexDirection: 'row',
-		justifyContent: 'flex-end',
-		marginTop: 2,
-	},
-	message: {
-		fontSize: 16,
-		backgroundColor: 'rgb(0, 206, 209)',
-		paddingHorizontal: 10,
-		paddingBottom: 6,
-		paddingTop: 4,
-		borderRadius: 15,
-		color: '#fff'
 	}
 });
