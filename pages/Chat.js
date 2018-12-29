@@ -5,6 +5,12 @@ import Icon from 'react-native-vector-icons/Feather';
 import Message from '../components/Message';
 
 export default class Chat extends Component {
+	static navigationOptions = ({navigation}) => ({
+		title: navigation.getParam('userName'),
+		headerTitleStyle: {
+			fontSize: 18
+		}
+	});
 	constructor() {
 		super();
 		this.state = {
@@ -48,7 +54,7 @@ export default class Chat extends Component {
 	}
 	render() {
 		return (
-			<View style={styles.container}>
+			<View style={styles.main}>
 				<View style={styles.flatListBox}>
 					<FlatList
 						data={this.state.items}
@@ -74,15 +80,15 @@ export default class Chat extends Component {
 }
 
 const styles = StyleSheet.create({
-	container: {
+	main: {
 		flex: 1,
 		flexDirection: 'column',
 		justifyContent: 'flex-end',
-		backgroundColor: 'rgb(255, 255, 255)'
+		backgroundColor: 'rgb(255, 255, 255)',
+		padding: 10
 	},
 	inputBox: {
-	 	flexDirection: 'row',
-	 	margin: 10
+	 	flexDirection: 'row'
 	},
 	input: {
 		flex: 6,
@@ -107,7 +113,6 @@ const styles = StyleSheet.create({
 	},
 	flatListBox: {
 		flex: 1,
-		alignItems: 'flex-end',
-		margin: 10
+		alignItems: 'flex-end'
 	}
 });

@@ -2,7 +2,7 @@
 	"userLogin": "",
 	"userPassword": "",
 	"userID": 1234,
-	"userImage": "../img/user.png",
+	"userImage": "",
 	"userName": "Xacho",
 	"userCountry": "Armenia",
 	"userStories": [
@@ -19,19 +19,47 @@
 	"userFriendChatList": [
 		{
 			"userID": 2542,
-			"userName": "Bogdan"
+			"userName": "Bogdan",
+			"messages": [
+				{
+					"key": "hello my freind",
+					"dateTime": "15:10"
+				},
+				{
+					"key": "hello my freind dkjfdjsflsdjf sjf sdjf sdf skdhf sdhf ksdf",
+					"dateTime": "15:12"
+				},
+				{
+					"key": "hello my freinddsfsdf   sdfsd fsd fsd ds sd fsdf sd fsd fsd fsd fsd fsdf sdf sd fs dfsd f",
+					"dateTime": "15:15"
+				}
+			]
 		},
 		{
 			"userID": 8956,
-			"userName": "Edo"
+			"userName": "Edo",
+			"messages": [
+			
+			]
 		},
 		{
 			"userID": 8541,
-			"userName": "Nikita"
+			"userName": "Nikita",
+			"messages": []
 		},
 		{
 			"userID": 1489,
-			"userName": "Sash"
+			"userName": "Sash",
+			"messages": [
+			
+			]
+		},
+		{
+			"userID": 1859,
+			"userName": "Gor",
+			"messages": [
+			
+			]
 		}
 	]
 }

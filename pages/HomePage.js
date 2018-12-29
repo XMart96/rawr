@@ -10,6 +10,7 @@ export default function HomePage(props) {
         return(
             <View style={styles.main}>
                 <ProfileHeader
+                    image={userInfo.userImage}
                     name={userInfo.userName}
                     country={userInfo.userCountry} 
                 />
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
     main: {
         flex: 1,
         flexDirection: 'column',
-        padding: 20,
+        padding: 10,
         backgroundColor: 'rgb(255, 255, 255)'
     }
 });

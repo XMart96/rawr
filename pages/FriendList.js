@@ -1,31 +1,28 @@
 import React, {Component} from 'react';
 import { View, StyleSheet, FlatList } from 'react-native';
 
+import userInfo from './userInfo';
 import FriendListItem from '../components/FriendListItem';
 
 export default class FriendList extends Component {
     constructor() {
         super();
         this.state = {
-            items: [
-                {key: 'Bogdan'},
-                {key: 'Edo'},
-                {key: 'Nikita'},
-                {key: 'Sanya'}
-            ]
+            users: userInfo.userFriendChatList
         };
     }
     render() {
         return(
             <View style={styles.main}>
                 <FlatList
-                    data={this.state.items}
+                    data={this.state.users}
                     renderItem={({item}) => 
                         <FriendListItem 
-                            name={item.key}
-                            onPress={() => this.props.navigation.navigate('Chat')} 
+                            name={item.userName}
+                            onPress={() => this.props.navigation.navigate('Chat', {userName: item.userName})} 
                         />
-		            }
+                    }
+                    keyExtractor={(item) => item.userName}
                 />
             </View>
         );
@@ -35,13 +32,6 @@ export default class FriendList extends Component {
 const styles = StyleSheet.create({
     main: {
         flex: 1,
-        backgroundColor: 'rgb(255, 255, 255)',
-    },
-    sectionHeader: {
-        backgroundColor: 'silver',
-        paddingTop: 2,
-        paddingBottom: 2,
-        paddingLeft: 10,
-        fontSize: 16
+        backgroundColor: 'rgb(255, 255, 255)'
     }
 });

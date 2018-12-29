@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Feather';
 export default function ProfileHeader(props) {
     return(
         <View style={styles.profileBox}>
-            <View style={styles.userImage}>
+            <View style={styles.userImageBox}>
                 <Icon name='user' color='rgb(0, 206, 209)' size={100} />
             </View>
             <View style={styles.userInfo}>
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     profileBox: {
         flexDirection: 'row'
     },
-    userImage: {
+    userImageBox: {
         flex: 2,
         alignItems: 'center'
     },
