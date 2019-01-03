@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Dimensions } from 'react-native';
 
 export default function Message(props) {
     return(
@@ -12,11 +12,14 @@ export default function Message(props) {
     );
 }
 
+const screenWidth = Dimensions.get('window').width;
+
 const styles = StyleSheet.create({
     messageBlock: {
 		flexDirection: 'row',
 		justifyContent: 'flex-end',
-        marginTop: 2
+        margin: 1,
+        width: screenWidth-20
     },
 	message: {
 		backgroundColor: 'rgb(0, 206, 209)',

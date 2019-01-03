@@ -1,0 +1,18 @@
+{
+    "userID": 2542,
+    "userName": "Bogdan",
+    "messages": [
+        {
+            "key": "hello my freind i am a Bogdan",
+            "dateTime": "15:10"
+        },
+        {
+            "key": "hello my freind dkjfdjsflsdjf sjf sdjf sdf skdhf sdhf ksdf",
+            "dateTime": "15:12"
+        },
+        {
+            "key": "hello my freinddsfsdf   sdfsd fsd fsd ds sd fsdf sd fsd fsd fsd fsd fsdf sdf sd fs dfsd f",
+            "dateTime": "15:15"
+        }
+    ]
+}

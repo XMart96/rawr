@@ -2,32 +2,38 @@ import React, { Component } from 'react';
 import { TextInput, View, StyleSheet, FlatList,	TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
+import userOutFiles from './userOutFiles';
 import Message from '../components/Message';
+import ChatSettings from '../components/ChatSettings';
 
 export default class Chat extends Component {
 	static navigationOptions = ({navigation}) => ({
 		title: navigation.getParam('userName'),
 		headerTitleStyle: {
 			fontSize: 18
-		}
+		},
+		headerRight: (
+			<ChatSettings />
+		)
 	});
 	constructor() {
 		super();
 		this.state = {
-			items: [],
+			messages: [],
+			outMessages: userOutFiles.messages,
 			text: '',
 			sendButtonVisible: false
 		};
 	}
   	sendMessage = () => {
 		let message = this.state.text;
-		if (message != '') {	
-			this.state.items.push({
+		if (message) {	
+			this.state.messages.push({
 				key: message,
 				dateTime: this.dateTime()
 			});
 			this.setState({
-				items: [...this.state.items],
+				messages: [...this.state.messages],
 				text: ''
 			});
 		}
@@ -57,8 +63,8 @@ export default class Chat extends Component {
 			<View style={styles.main}>
 				<View style={styles.flatListBox}>
 					<FlatList
-						data={this.state.items}
-						renderItem={({item}) => 
+						data={this.state.messages}
+						renderItem={({item}) =>
 							<Message message={item.key} time={item.dateTime} />				
 						}
 					/>
@@ -113,6 +119,7 @@ const styles = StyleSheet.create({
 	},
 	flatListBox: {
 		flex: 1,
-		alignItems: 'flex-end'
+		alignItems: 'flex-end',
+		marginBottom: 10
 	}
 });

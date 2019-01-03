@@ -19,47 +19,23 @@
 	"userFriendChatList": [
 		{
 			"userID": 2542,
-			"userName": "Bogdan",
-			"messages": [
-				{
-					"key": "hello my freind",
-					"dateTime": "15:10"
-				},
-				{
-					"key": "hello my freind dkjfdjsflsdjf sjf sdjf sdf skdhf sdhf ksdf",
-					"dateTime": "15:12"
-				},
-				{
-					"key": "hello my freinddsfsdf   sdfsd fsd fsd ds sd fsdf sd fsd fsd fsd fsd fsdf sdf sd fs dfsd f",
-					"dateTime": "15:15"
-				}
-			]
+			"userName": "Bogdan"
 		},
 		{
 			"userID": 8956,
-			"userName": "Edo",
-			"messages": [
-			
-			]
+			"userName": "Edo"
 		},
 		{
 			"userID": 8541,
-			"userName": "Nikita",
-			"messages": []
+			"userName": "Nikita"
 		},
 		{
 			"userID": 1489,
-			"userName": "Sash",
-			"messages": [
-			
-			]
+			"userName": "Sash"
 		},
 		{
 			"userID": 1859,
-			"userName": "Gor",
-			"messages": [
-			
-			]
+			"userName": "Gor"
 		}
 	]
 }
