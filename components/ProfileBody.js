@@ -36,7 +36,7 @@ export default class ProfileBody extends Component {
                         active={this.state.tabIndex == 0}>
                         <Icon 
                             name='layers' 
-                            size={24} 
+                            size={25} 
                             style={[this.state.tabIndex == 0 ? {color: color='rgb(0, 206, 209)'} : {}]} 
                         />
                     </TouchableOpacity>
@@ -45,7 +45,7 @@ export default class ProfileBody extends Component {
                         active={this.state.tabIndex == 1}>
                         <Icon 
                             name='grid' 
-                            size={24} 
+                            size={25} 
                             style={[this.state.tabIndex == 1 ? {color: color='rgb(0, 206, 209)'} : {}]} 
                         />
                     </TouchableOpacity>
@@ -54,7 +54,7 @@ export default class ProfileBody extends Component {
                         active={this.state.tabIndex == 2}>
                         <Icon 
                             name='heart' 
-                            size={24} 
+                            size={25} 
                             style={[this.state.tabIndex == 2 ? {color: color='rgb(0, 206, 209)'} : {}]} 
                         />
                     </TouchableOpacity>
@@ -63,7 +63,7 @@ export default class ProfileBody extends Component {
                         active={this.state.tabIndex == 3}>
                         <Icon 
                             name='bookmark' 
-                            size={24} 
+                            size={25} 
                             style={[this.state.tabIndex == 3 ? {color: color='rgb(0, 206, 209)'} : {}]} 
                         />
                     </TouchableOpacity>

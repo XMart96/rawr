@@ -5,8 +5,8 @@ import Icon from 'react-native-vector-icons/Feather';
 export default function ChatSettings() {
 	return (
 		<View style={styles.main}>
-			<Icon style={styles.userIcon} name='user' size={30} />
-			<Icon style={{marginRight: 10}} name='more-vertical' size={30} />
+			<Icon style={styles.userIcon} name='user' size={25} />
+			<Icon style={{marginRight: 10}} name='more-vertical' size={25} />
 		</View>
 	);
 }
