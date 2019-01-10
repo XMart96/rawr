@@ -1,12 +1,16 @@
-import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import React from 'react';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 export default function ChatSettings() {
 	return (
 		<View style={styles.main}>
-			<Icon style={styles.userIcon} name='user' size={25} />
-			<Icon style={{marginRight: 10}} name='more-vertical' size={25} />
+			<TouchableOpacity style={styles.userIcon}>
+				<Icon name='user' size={25} />
+			</TouchableOpacity>
+			<TouchableOpacity style={{marginRight: 10}}>
+				<Icon name='more-vertical' size={25} />
+			</TouchableOpacity>
 		</View>
 	);
 }
