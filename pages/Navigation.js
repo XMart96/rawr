@@ -11,17 +11,7 @@ import Folowers from './Folowers';
 import FriendList from './FriendList';
 import Chat from './Chat';
 
-const FriendListStackNav = createStackNavigator({
-    FriendList: {
-	    screen: FriendList,
-	    navigationOptions: {
-	        header: null
-	    }
-    },
-    Chat: Chat
-});
-
-FriendListStackNav.navigationOptions = ({navigation}) => {
+FriendList.navigationOptions = ({navigation}) => {
     let tabBarVisible = true;
     let swipeEnabled = true;
     if (navigation.state.index > 0) {
@@ -34,7 +24,7 @@ FriendListStackNav.navigationOptions = ({navigation}) => {
     }
 }
 
-const TabNav = createMaterialTopTabNavigator({
+const homeTabNavigator = createMaterialTopTabNavigator({
     Home: {
         screen: HomePage,
         navigationOptions: {
@@ -44,7 +34,7 @@ const TabNav = createMaterialTopTabNavigator({
         }
     },
     FriendList: {
-        screen: FriendListStackNav,
+        screen: FriendList,
         navigationOptions: {
             tabBarIcon: ({tintColor}) => (
                 <Icon name='inbox' color={tintColor} size={25} />
@@ -87,11 +77,18 @@ export default createStackNavigator({
         }
     },
     Home: {
-        screen: TabNav,
+        screen: homeTabNavigator,
         navigationOptions: {
             header: null
         }
     },
     Folowing: Folowing,
-    Folowers: Folowers
+    Folowers: Folowers,
+    FriendList: {
+	    screen: FriendList,
+	    navigationOptions: {
+	        header: null
+	    }
+    },
+    Chat: Chat
 });
