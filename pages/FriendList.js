@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, StyleSheet, FlatList, TextInput, TouchableOpacity } from 'react-native';
+import { View, ScrollView, StyleSheet, FlatList, TextInput, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 import userInfo from './userInfo';
@@ -28,27 +28,29 @@ export default class FriendList extends Component {
     render() {
         return(
             <View style={styles.main}>
-                <View style={{flexDirection: 'row'}}>
-                    <TextInput
-                        style={[styles.searchInput, this.state.clearButtonVisible && styles.inputActive]}
-                        placeholder='Search Friends'
-                        value={this.state.text}
-                        onChangeText={(text) => this.setState({text})}
-                        onFocus={() => this.setState({clearButtonVisible: true})}
-                        onBlur={() => this.setState({clearButtonVisible: false})}
-                    />
-                    {this.clearButtonVisible()}
-                </View>
-                <FlatList
-                    data={this.state.users}
-                    renderItem={({item}) => 
-                        <FriendListItem 
-                            name={item.userName}
-                            onPress={() => this.props.navigation.navigate('Chat', {userName: item.userName})} 
+                <ScrollView>
+                    <View style={{flexDirection: 'row'}}>
+                        <TextInput
+                            style={[styles.searchInput, this.state.clearButtonVisible && styles.inputActive]}
+                            placeholder='Search Friends'
+                            value={this.state.text}
+                            onChangeText={(text) => this.setState({text})}
+                            onFocus={() => this.setState({clearButtonVisible: true})}
+                            onBlur={() => this.setState({clearButtonVisible: false})}
                         />
-                    }
-                    keyExtractor={(item) => item.userName}
-                />
+                        {this.clearButtonVisible()}
+                    </View>
+                    <FlatList
+                        data={this.state.users}
+                        renderItem={({item}) => 
+                            <FriendListItem 
+                                name={item.userName}
+                                onPress={() => this.props.navigation.navigate('Chat', {userName: item.userName})} 
+                            />
+                        }
+                        keyExtractor={(item) => item.userName}
+                    />
+                </ScrollView>
             </View>
         );
     }

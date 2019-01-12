@@ -6,15 +6,30 @@
 	"userName": "Xacho",
 	"userCountry": "Armenia",
 	"userStories": [
-		{}
+		{
+			"storyImage": "",
+			"storyTitle": "post1",
+			"storySubtitle": "subtitle" 
+		},
+		{
+			"storyImage": "",
+			"storyTitle": "post2",
+			"storySubtitle": "subtitle" 
+		},
+		{
+			"storyImage": "",
+			"storyTitle": "post3",
+			"storySubtitle": "subtitle" 
+		},
+		{
+			"storyImage": "",
+			"storyTitle": "post4",
+			"storySubtitle": "subtitle" 
+		}
 	],
 	"userFolowing": [
-		{},
-		{}
 	],
 	"userFolowers": [
-		{},
-		{}
 	],
 	"userFriendChatList": [
 		{

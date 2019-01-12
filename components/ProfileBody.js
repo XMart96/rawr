@@ -8,8 +8,8 @@ import LikeTab from './LikeTab';
 import BookmarkTab from './BookmarkTab';
 
 export default class ProfileBody extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             tabIndex: 0
         }
@@ -21,8 +21,8 @@ export default class ProfileBody extends Component {
     }
     renderSection = () => {
         switch(this.state.tabIndex) {
-            case 0 : return (<LayerTab />); break;
-            case 1 : return (<GridTab />); break;
+            case 0 : return (<LayerTab stories={this.props.stories} />); break;
+            case 1 : return (<GridTab stories={this.props.stories} />); break;
             case 2 : return (<LikeTab />); break;
             case 3 : return (<BookmarkTab />); break;
         }
@@ -78,6 +78,6 @@ const styles = StyleSheet.create({
 	main: {
 		flexDirection: 'row',
 		justifyContent: 'space-around',
-		paddingTop: 10
+		marginVertical: 10
 	}
 });

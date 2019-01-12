@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Feather';
 
 import userOutFiles from './userOutFiles';
 import Message from '../components/Message';
-import ChatSettings from '../components/ChatSettings';
+import ChatSettingsIcons from '../components/ChatSettingsIcons';
 
 export default class Chat extends Component {
 	static navigationOptions = ({navigation}) => ({
@@ -13,7 +13,7 @@ export default class Chat extends Component {
 			fontSize: 18
 		},
 		headerRight: (
-			<ChatSettings />
+			<ChatSettingsIcons onPress={() => navigation.navigate('ChatSettings')} />
 		)
 	});
 	constructor() {

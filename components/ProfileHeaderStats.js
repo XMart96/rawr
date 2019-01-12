@@ -5,7 +5,7 @@ export default function ProfileHeaderStats(props) {
     return(
         <View style={styles.statsBox}>
             <Text style={styles.statText}>
-                stories: {props.stories}
+                stories: {props.storiesQuantity}
             </Text>
             <Text 
                 style={styles.statText} 
